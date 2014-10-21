@@ -16,6 +16,22 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
+        
+        // Set up the view
+        window = UIWindow(frame: UIScreen.mainScreen().bounds)
+        
+        window!.backgroundColor = UIColor.whiteColor()
+        window!.makeKeyAndVisible()
+        
+        // create a ItemStore
+        let itemStore = ItemStore()
+        
+        // Create a ItemsViewController and give it to ItemStore
+        let ivc = ItemsViewController(itemStore: itemStore)
+        
+        // Place ItemsViewController's table view in the window hierarchy
+        window!.rootViewController = ivc
+
         return true
     }
 
