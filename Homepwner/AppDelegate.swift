@@ -29,8 +29,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Create a ItemsViewController and give it to ItemStore
         let ivc = ItemsViewController(itemStore: itemStore)
         
-        // Place ItemsViewController's table view in the window hierarchy
-        window!.rootViewController = ivc
+        // Create an instance of UINavigationController
+        // its stack contains only ivc
+        let navController = UINavigationController(rootViewController: ivc)
+        
+        // Place navigation controller's view in the window hierarchy
+        window!.rootViewController = navController
 
         return true
     }
