@@ -113,6 +113,8 @@ class DetailViewController: UIViewController, UINavigationControllerDelegate, UI
     @IBAction func backgroundTapped(sender: AnyObject) {
         view.endEditing(true)
     }
+    
+    
     func textFieldShouldReturn(textField: UITextField) -> Bool {
         textField.resignFirstResponder()
         return true
