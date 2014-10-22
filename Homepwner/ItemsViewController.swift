@@ -31,26 +31,22 @@ class ItemsViewController: UITableViewController, UITableViewDelegate {
         }
     }
     
-    @IBAction func toggleEditingMode(sender: AnyObject) {
-        // If you are currently in editing mode...
-        if editing {
-            // Change text of button to inform user of state
-            sender.setTitle("Edit", forState: .Normal)
-            // Turn off editing mode
-            setEditing(false, animated: true)
-        }
-            else {
-            // Change text of button to inform user of state
-            sender.setTitle("Done", forState: .Normal)
-            // Enter editing mode
-            setEditing(true, animated: true)
-        }
-        
-    }
-    
     init (itemStore: ItemStore) {
         self.itemStore = itemStore
         super.init(nibName: nil, bundle: nil)
+        
+        navigationItem.title = "Homepwner"
+        
+        // Create a new bar button item that will send
+        // addNewItem(_:) to ItemsVIewController
+        let addItem = UIBarButtonItem(barButtonSystemItem: .Add, target: self, action: "addNewItem:");
+        
+        //Set this bar button item as the right item in the navigationItem
+        navigationItem.rightBarButtonItem = addItem
+        
+        navigationItem.leftBarButtonItem = editButtonItem()
+        
+        
         
         
     }
@@ -101,12 +97,7 @@ class ItemsViewController: UITableViewController, UITableViewDelegate {
             tableView.registerNib(nib,
             forCellReuseIdentifier: "ItemCell")
         
-        // Load the header view
-        NSBundle.mainBundle().loadNibNamed("HeaderView", owner: self, options: nil)
-        
-        // Set the table view's header view
-        tableView.tableHeaderView = headerVIew
-        
+            
     }
     
     override func tableView(tableView: UITableView,
@@ -135,8 +126,24 @@ class ItemsViewController: UITableViewController, UITableViewDelegate {
     // This code changes the word Delete to Remove for the button in the list view
     override func tableView(tableView: UITableView, titleForDeleteConfirmationButtonForRowAtIndexPath indexPath: NSIndexPath) -> String! {
             return "Remove"
-            
+    }
+    
+    override func tableView(tableView: UITableView,
+            didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        // Create a DetailViewController
+        let dvc = DetailViewController(itemStore: itemStore)
+        
+        // Give the detail view controller the item
+        let item = itemStore.allItems[indexPath.row]
+        dvc.item = item
+        showViewController(dvc, sender: self)
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+                super.viewWillAppear(animated)
+                tableView.reloadData()
     }
     
 }
+
 
