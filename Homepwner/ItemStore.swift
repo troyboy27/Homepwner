@@ -12,8 +12,16 @@ class ItemStore: NSObject {
     
     var allItems: [Item] = []
     
+    let itemArchivePath: String = {
+        let documentsDirectories =
+        NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)
+        let documentDirectory = documentsDirectories.first as String
+        return documentDirectory.stringByAppendingPathComponent("items.archive")
+        }()
+
+    
     func createItem() -> Item {
-        let newItem = Item(random: true)
+        let newItem = Item(random: false)
         allItems.append(newItem)
         return newItem
     }
@@ -35,4 +43,32 @@ class ItemStore: NSObject {
         // Insert item in array at new location
         allItems.insert(movedItem, atIndex: toIndex)
     }
+    
+    func saveChanges() -> Bool {
+            return NSKeyedArchiver.archiveRootObject(allItems, toFile: itemArchivePath)
+    }
+    
+    func appDidEnterBackground(note: NSNotification) {
+                let success = saveChanges()
+                if success {
+                println("Saved all of the Items")
+            }
+                else {
+                println("Could not save the Items")
+                }
+    }
+    
+    override init() {
+        super.init()
+        if let archivedItems = NSKeyedUnarchiver.unarchiveObjectWithFile(itemArchivePath) as? [Item] {
+        allItems += archivedItems
+        }
+        
+        let nc = NSNotificationCenter.defaultCenter()
+        nc.addObserver(self,
+        selector: "appDidEnterBackground:",
+        name: UIApplicationDidEnterBackgroundNotification,
+        object: nil)
+    }
+    
 }
