@@ -6,24 +6,15 @@
 //  Copyright (c) 2014 Big Nerd Ranch. All rights reserved.
 //
 
-import Foundation
+import UIKit
+
 class Item: NSObject {
     
     var name: String
-    var valueInDollars: Int
+    var valueInDollars: Int?
     var serialNumber: String?
     let dateCreated: NSDate
-    
-    override var description: String {
-        
-        var snString = ""
-        if let sn = serialNumber {
-            snString = "(\(sn))"
-        }
-        
-        return "\(name) \(snString): Worth $\(valueInDollars), recorded on \(dateCreated)"
-        
-    }
+    let itemKey: String
     
     convenience init(random: Bool = false) {
         if random {
@@ -52,18 +43,19 @@ class Item: NSObject {
             self.init(name: name, valueInDollars: value, serialNumber: serialNumber)
         }
         else {
-            self.init(name: "", valueInDollars: 0, serialNumber: nil)
+            self.init(name: "", valueInDollars: nil, serialNumber: nil)
         }
     }
     
-    init(name: String, valueInDollars: Int, serialNumber: String?) {
+    init(name: String, valueInDollars: Int?, serialNumber: String?) {
         self.name = name
         self.valueInDollars = valueInDollars
         self.serialNumber = serialNumber
         dateCreated = NSDate()
         
+        let uuid = NSUUID()
+        itemKey = uuid.UUIDString
+        
         super.init()
     }
-    
-    
 }

@@ -16,6 +16,7 @@
 		5E2555FC19F6DC9D00D4A5CC /* ItemsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E2555FB19F6DC9D00D4A5CC /* ItemsViewController.swift */; };
 		5E2555FE19F6DE3400D4A5CC /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E2555FD19F6DE3400D4A5CC /* Item.swift */; };
 		5E25560019F6DE7D00D4A5CC /* ItemStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E2555FF19F6DE7D00D4A5CC /* ItemStore.swift */; };
+		5E4CB44919F7524A0000E1FE /* ImageStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E4CB44819F7524A0000E1FE /* ImageStore.swift */; };
 		5ED2D57D19F6FD49009AEC48 /* icon_home_large.gif in Resources */ = {isa = PBXBuildFile; fileRef = 5ED2D57C19F6FD49009AEC48 /* icon_home_large.gif */; };
 		5ED2D58219F71A98009AEC48 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ED2D58019F71A98009AEC48 /* DetailViewController.swift */; };
 		5ED2D58319F71A98009AEC48 /* DetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5ED2D58119F71A98009AEC48 /* DetailViewController.xib */; };
@@ -47,6 +48,7 @@
 		5E2555FB19F6DC9D00D4A5CC /* ItemsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemsViewController.swift; sourceTree = "<group>"; };
 		5E2555FD19F6DE3400D4A5CC /* Item.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 		5E2555FF19F6DE7D00D4A5CC /* ItemStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemStore.swift; sourceTree = "<group>"; };
+		5E4CB44819F7524A0000E1FE /* ImageStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageStore.swift; sourceTree = "<group>"; };
 		5ED2D57C19F6FD49009AEC48 /* icon_home_large.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = icon_home_large.gif; sourceTree = "<group>"; };
 		5ED2D58019F71A98009AEC48 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		5ED2D58119F71A98009AEC48 /* DetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DetailViewController.xib; sourceTree = "<group>"; };
@@ -94,17 +96,18 @@
 			isa = PBXGroup;
 			children = (
 				5E2555DA19F6D78E00D4A5CC /* AppDelegate.swift */,
-				5ED2D58019F71A98009AEC48 /* DetailViewController.swift */,
-				5ED2D58119F71A98009AEC48 /* DetailViewController.xib */,
-				5E2555FB19F6DC9D00D4A5CC /* ItemsViewController.swift */,
-				5EEDAF8E19F6F4E70055A881 /* ItemCell.swift */,
-				5EEDAF9019F6F5070055A881 /* ItemCell.xib */,
-				5E2555E119F6D78E00D4A5CC /* Images.xcassets */,
-				5E2555E319F6D78E00D4A5CC /* LaunchScreen.xib */,
 				5E2555FD19F6DE3400D4A5CC /* Item.swift */,
 				5E2555FF19F6DE7D00D4A5CC /* ItemStore.swift */,
-				5E2555FA19F6D84200D4A5CC /* Not Used */,
+				5E4CB44819F7524A0000E1FE /* ImageStore.swift */,
+				5E2555E119F6D78E00D4A5CC /* Images.xcassets */,
+				5E2555E319F6D78E00D4A5CC /* LaunchScreen.xib */,
 				5E2555D819F6D78E00D4A5CC /* Supporting Files */,
+				5E2555FB19F6DC9D00D4A5CC /* ItemsViewController.swift */,
+				5ED2D58019F71A98009AEC48 /* DetailViewController.swift */,
+				5ED2D58119F71A98009AEC48 /* DetailViewController.xib */,
+				5EEDAF8E19F6F4E70055A881 /* ItemCell.swift */,
+				5EEDAF9019F6F5070055A881 /* ItemCell.xib */,
+				5E2555FA19F6D84200D4A5CC /* Not Used */,
 			);
 			path = Homepwner;
 			sourceTree = "<group>";
@@ -250,6 +253,7 @@
 				5E2555FE19F6DE3400D4A5CC /* Item.swift in Sources */,
 				5E2555DD19F6D78E00D4A5CC /* ViewController.swift in Sources */,
 				5EEDAF8F19F6F4E70055A881 /* ItemCell.swift in Sources */,
+				5E4CB44919F7524A0000E1FE /* ImageStore.swift in Sources */,
 				5E2555FC19F6DC9D00D4A5CC /* ItemsViewController.swift in Sources */,
 				5E25560019F6DE7D00D4A5CC /* ItemStore.swift in Sources */,
 				5E2555DB19F6D78E00D4A5CC /* AppDelegate.swift in Sources */,
