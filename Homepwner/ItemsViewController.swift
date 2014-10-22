@@ -109,19 +109,48 @@ class ItemsViewController: UITableViewController {
     override func tableView(tableView: UITableView,
         commitEditingStyle editingStyle: UITableViewCellEditingStyle,
         forRowAtIndexPath indexPath: NSIndexPath) {
-            // If the table view is asking to commit a delete command...
+            
+        // If the table view is asking to commit a delete command...
             if editingStyle == .Delete {
+        
                 let item = itemStore.allItems[indexPath.row]
-                // Remove the item from the store
-                itemStore.removeItem(item)
                 
-                // Remove the item's image from the image store
-                imageStore.deleteImageForKey(item.itemKey)
+                let title = "Delete \(item.name)?"
+                let message = "Are you sure you want to delete this item?"
                 
-                // Also remove that row from the table view with an animation
-                tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
+                let ac = UIAlertController(title: title, message: message, preferredStyle: .ActionSheet)
+                
+                let cancelAction = UIAlertAction(title: "Cancel", style: .Cancel, handler: nil)
+                ac.addAction(cancelAction)
+                
+                let deleteAction = UIAlertAction(title: "Delete", style: .Destructive, handler: { (action) -> Void in
+                    
+                    // Remove the item from the store
+                    self.itemStore.removeItem(item)
+                    
+                    // Remove the item's image from the image store
+                    self.imageStore.deleteImageForKey(item.itemKey)
+                    
+                    // Also remove that row from the table view with an animation
+                    tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
+                })
+                ac.addAction(deleteAction)
+                
+                //Use popover style when in regular width environment
+                ac.modalPresentationStyle = .Popover
+                
+                // Configure popover
+                if let cell = tableView.cellForRowAtIndexPath(indexPath) {
+                    ac.popoverPresentationController?.sourceView = cell
+                    ac.popoverPresentationController?.sourceRect = cell.bounds
+                }
+            //Present the alert controller
+                presentViewController(ac, animated: true, completion: nil)
+                
             }
     }
+    
+    
     
     override func tableView(tableView: UITableView,
         moveRowAtIndexPath sourceIndexPath: NSIndexPath,
