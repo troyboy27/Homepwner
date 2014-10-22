@@ -59,7 +59,10 @@ class ItemsViewController: UITableViewController {
             let indexPath = NSIndexPath(forRow: index, inSection: 0)
             // Insert this new row into the table.
             tableView.insertRowsAtIndexPaths([indexPath], withRowAnimation: .Top)
+            
         }
+        
+        
     }
     
     // MARK: Table View Methods
