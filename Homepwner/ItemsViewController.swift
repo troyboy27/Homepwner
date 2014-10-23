@@ -59,10 +59,7 @@ class ItemsViewController: UITableViewController {
             let indexPath = NSIndexPath(forRow: index, inSection: 0)
             // Insert this new row into the table.
             tableView.insertRowsAtIndexPaths([indexPath], withRowAnimation: .Top)
-            
         }
-        
-        
     }
     
     // MARK: Table View Methods
@@ -86,12 +83,7 @@ class ItemsViewController: UITableViewController {
             // Configure the cell with the Item
             cell.nameLabel.text = item.name
             cell.serialNumberLabel.text = item.serialNumber
-            if let value = item.valueInDollars {
-                cell.valueLabel.text = "$\(value)"
-            }
-            else {
-                cell.valueLabel.text = ""
-            }
+            cell.valueLabel.text = "$\(item.valueInDollars)"
             
             return cell
     }
@@ -109,22 +101,21 @@ class ItemsViewController: UITableViewController {
     override func tableView(tableView: UITableView,
         commitEditingStyle editingStyle: UITableViewCellEditingStyle,
         forRowAtIndexPath indexPath: NSIndexPath) {
-            
-        // If the table view is asking to commit a delete command...
+            // If the table view is asking to commit a delete command...
             if editingStyle == .Delete {
-        
                 let item = itemStore.allItems[indexPath.row]
                 
                 let title = "Delete \(item.name)?"
                 let message = "Are you sure you want to delete this item?"
                 
-                let ac = UIAlertController(title: title, message: message, preferredStyle: .ActionSheet)
+                let ac = UIAlertController(title: title,
+                    message: message,
+                    preferredStyle: .ActionSheet)
                 
                 let cancelAction = UIAlertAction(title: "Cancel", style: .Cancel, handler: nil)
                 ac.addAction(cancelAction)
                 
                 let deleteAction = UIAlertAction(title: "Delete", style: .Destructive, handler: { (action) -> Void in
-                    
                     // Remove the item from the store
                     self.itemStore.removeItem(item)
                     
@@ -132,25 +123,20 @@ class ItemsViewController: UITableViewController {
                     self.imageStore.deleteImageForKey(item.itemKey)
                     
                     // Also remove that row from the table view with an animation
-                    tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
+                    self.tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
                 })
                 ac.addAction(deleteAction)
                 
-                //Use popover style when in regular width environment
                 ac.modalPresentationStyle = .Popover
                 
-                // Configure popover
                 if let cell = tableView.cellForRowAtIndexPath(indexPath) {
                     ac.popoverPresentationController?.sourceView = cell
                     ac.popoverPresentationController?.sourceRect = cell.bounds
                 }
-            //Present the alert controller
-                presentViewController(ac, animated: true, completion: nil)
                 
+                presentViewController(ac, animated: true, completion: nil)
             }
     }
-    
-    
     
     override func tableView(tableView: UITableView,
         moveRowAtIndexPath sourceIndexPath: NSIndexPath,

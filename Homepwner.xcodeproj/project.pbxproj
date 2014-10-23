@@ -14,8 +14,11 @@
 		5E2555E519F6D78E00D4A5CC /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5E2555E319F6D78E00D4A5CC /* LaunchScreen.xib */; };
 		5E2555F119F6D78E00D4A5CC /* HomepwnerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E2555F019F6D78E00D4A5CC /* HomepwnerTests.swift */; };
 		5E2555FC19F6DC9D00D4A5CC /* ItemsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E2555FB19F6DC9D00D4A5CC /* ItemsViewController.swift */; };
-		5E2555FE19F6DE3400D4A5CC /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E2555FD19F6DE3400D4A5CC /* Item.swift */; };
 		5E25560019F6DE7D00D4A5CC /* ItemStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E2555FF19F6DE7D00D4A5CC /* ItemStore.swift */; };
+		5E3B0ACF19F871B70035B828 /* Homepwner.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 5E3B0ACD19F871B70035B828 /* Homepwner.xcdatamodeld */; };
+		5E3B0AD119F872FC0035B828 /* ImageTransformer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E3B0AD019F872FC0035B828 /* ImageTransformer.swift */; };
+		5E3B0AD319F876B70035B828 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E3B0AD219F876B70035B828 /* Item.swift */; };
+		5E3B0AD519F87B0A0035B828 /* AssetTypeViewControllerTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E3B0AD419F87B0A0035B828 /* AssetTypeViewControllerTableViewController.swift */; };
 		5E4CB44919F7524A0000E1FE /* ImageStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E4CB44819F7524A0000E1FE /* ImageStore.swift */; };
 		5ED2D57D19F6FD49009AEC48 /* icon_home_large.gif in Resources */ = {isa = PBXBuildFile; fileRef = 5ED2D57C19F6FD49009AEC48 /* icon_home_large.gif */; };
 		5ED2D58219F71A98009AEC48 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ED2D58019F71A98009AEC48 /* DetailViewController.swift */; };
@@ -46,8 +49,11 @@
 		5E2555EF19F6D78E00D4A5CC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5E2555F019F6D78E00D4A5CC /* HomepwnerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomepwnerTests.swift; sourceTree = "<group>"; };
 		5E2555FB19F6DC9D00D4A5CC /* ItemsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemsViewController.swift; sourceTree = "<group>"; };
-		5E2555FD19F6DE3400D4A5CC /* Item.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 		5E2555FF19F6DE7D00D4A5CC /* ItemStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemStore.swift; sourceTree = "<group>"; };
+		5E3B0ACE19F871B70035B828 /* Homepwner.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Homepwner.xcdatamodel; sourceTree = "<group>"; };
+		5E3B0AD019F872FC0035B828 /* ImageTransformer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ImageTransformer.swift; path = ../ImageTransformer.swift; sourceTree = "<group>"; };
+		5E3B0AD219F876B70035B828 /* Item.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Item.swift; path = ../Item.swift; sourceTree = "<group>"; };
+		5E3B0AD419F87B0A0035B828 /* AssetTypeViewControllerTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AssetTypeViewControllerTableViewController.swift; sourceTree = "<group>"; };
 		5E4CB44819F7524A0000E1FE /* ImageStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageStore.swift; sourceTree = "<group>"; };
 		5ED2D57C19F6FD49009AEC48 /* icon_home_large.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = icon_home_large.gif; sourceTree = "<group>"; };
 		5ED2D58019F71A98009AEC48 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
@@ -95,8 +101,11 @@
 		5E2555D719F6D78E00D4A5CC /* Homepwner */ = {
 			isa = PBXGroup;
 			children = (
+				5E3B0ACD19F871B70035B828 /* Homepwner.xcdatamodeld */,
+				5E3B0AD019F872FC0035B828 /* ImageTransformer.swift */,
+				5E3B0AD419F87B0A0035B828 /* AssetTypeViewControllerTableViewController.swift */,
 				5E2555DA19F6D78E00D4A5CC /* AppDelegate.swift */,
-				5E2555FD19F6DE3400D4A5CC /* Item.swift */,
+				5E3B0AD219F876B70035B828 /* Item.swift */,
 				5E2555FF19F6DE7D00D4A5CC /* ItemStore.swift */,
 				5E4CB44819F7524A0000E1FE /* ImageStore.swift */,
 				5E2555E119F6D78E00D4A5CC /* Images.xcassets */,
@@ -250,8 +259,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5E2555FE19F6DE3400D4A5CC /* Item.swift in Sources */,
+				5E3B0AD319F876B70035B828 /* Item.swift in Sources */,
+				5E3B0AD119F872FC0035B828 /* ImageTransformer.swift in Sources */,
+				5E3B0ACF19F871B70035B828 /* Homepwner.xcdatamodeld in Sources */,
 				5E2555DD19F6D78E00D4A5CC /* ViewController.swift in Sources */,
+				5E3B0AD519F87B0A0035B828 /* AssetTypeViewControllerTableViewController.swift in Sources */,
 				5EEDAF8F19F6F4E70055A881 /* ItemCell.swift in Sources */,
 				5E4CB44919F7524A0000E1FE /* ImageStore.swift in Sources */,
 				5E2555FC19F6DC9D00D4A5CC /* ItemsViewController.swift in Sources */,
@@ -463,6 +475,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		5E3B0ACD19F871B70035B828 /* Homepwner.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				5E3B0ACE19F871B70035B828 /* Homepwner.xcdatamodel */,
+			);
+			currentVersion = 5E3B0ACE19F871B70035B828 /* Homepwner.xcdatamodel */;
+			path = Homepwner.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 5E2555CD19F6D78E00D4A5CC /* Project object */;
 }
